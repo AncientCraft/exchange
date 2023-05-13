@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'routes/router.dart';
 
 void main() {
-  runApp(App());
+  runApp(
+    ProviderScope(
+      child: App(),
+    ),
+  );
 }
 
 class App extends StatelessWidget {
-  App({super.key});
+  App({Key? key}) : super(key: key);
 
   final _appRouter = AppRouter();
 
